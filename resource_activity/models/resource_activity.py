@@ -353,15 +353,6 @@ class ResourceActivity(models.Model):
                     vals['need_push'] = True
         return super(ResourceActivity,self).write(vals)
 
-    @api.multi
-    @api.depends('partner_id', 'registrations_max','registrations_expected')
-    def _propagate_activity_fields_update(self):
-        for activity in self:
-            vals['partner_id'] = activit.partner_id
-            vals['registrations_max'] = activit.registrations_max
-            vals['registrations_expected'] = activit.registrations_expected
-            activity.registrations.write(vals)
-
 
 class ActivityRegistration(models.Model):
     _name = 'resource.activity.registration'
