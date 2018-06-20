@@ -5,11 +5,11 @@
 			<xpath expr="//div[@name='payment_term']" position="after">
                 <div name="date_start" t-if="doc.date_start" class="col-xs-3">
                     <strong>Start date:</strong>
-                    <p t-field="doc.date_start"/>
+                    <p t-field="doc.date_start" t-field-options='{"format": "d MMMM y"}'/>
                 </div>
                 <div name="date_end" t-if="doc.date_end" class="col-xs-3">
                     <strong>End date:</strong>
-                    <p t-field="doc.date_end"/>
+                    <p t-field="doc.date_end" t-field-options='{"format": "d MMMM y"}'/>
                 </div>
                 <div name="activity_theme" t-if="doc.activity_theme" class="col-xs-3">
                     <strong>Theme:</strong>
@@ -25,7 +25,7 @@
                 </div>
                 <div name="delivery_time" t-if="doc.delivery_time" class="col-xs-3">
                     <strong>Delivery time:</strong>
-                    <p t-field="doc.delivery_time"/>
+                    <p t-field="doc.delivery_time" t-field-options='{"format": "d MMMM y"}'/>
                 </div>
                 <div name="pickup_place" t-if="doc.pickup_place" class="col-xs-3">
                     <strong>Pickup place:</strong>
@@ -33,7 +33,7 @@
                 </div>
                 <div name="pickup_time" t-if="doc.pickup_time" class="col-xs-3">
                     <strong>Pickup time:</strong>
-                    <p t-field="doc.pickup_time"/>
+                    <p t-field="doc.pickup_time" t-field-options='{"format": "d MMMM y"}'/>
                 </div>
                 <div name="registrations_expected" t-if="doc.registrations_expected" class="col-xs-3">
                     <strong>Registrations expected:</strong>
@@ -47,7 +47,24 @@
                         </t>                                  
                     </t>
                 </div>
-            </xpath>
+	</xpath>
+
+	    <xpath expr="//div[@name='total']" position="after">
+	       <div class="row" name="row-signature" style="margin-top:12px ">
+    	           <div class="col-xs-6" name="Signature" style="border: solid medium #00B9E4; border-radius: 10px;" >
+		       <p style="margin-top:5px; text-decoration: underline #00B9E4; ">Pour accord</p>
+		       <div class="row" name="row-to-divide-signature-in-two-parts">
+		           <div class="col-xs-6" name="Signature-left" style="padding-bottom: 15px;" >
+			       <div>Nom et Prénom:</div>
+			       <div><b>Signature:</b></div>
+		           </div>
+			   <div class="col-xs-6" name="Signature-right">
+			       <div>Date:</div>
+		           </div>
+	               </div>
+               </div>
+          </div>
+	    </xpath>
 		</template>
 	</data>
 </openerp>
