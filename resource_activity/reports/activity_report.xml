@@ -14,6 +14,8 @@
                    <t t-foreach="o.guides" t-as="guide">
                         <t t-if="guide">                 
                         <div t-field="guide.name"></div>
+			<div>Tel: <span t-field="guide.phone"/></div>
+			<div>Mail: <span t-field="guide.email"/></div>
                         </t>                                  
                    </t>
                 </t> 
