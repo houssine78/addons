@@ -13,9 +13,9 @@
                    <h4>Guide(s):</h4>
                    <t t-foreach="o.guides" t-as="guide">
                         <t t-if="guide">                 
-                        <div t-field="guide.name"></div>
-			<div>Tel: <span t-field="guide.phone"/></div>
-			<div>Mail: <span t-field="guide.email"/></div>
+				<div t-field="guide.name"></div>
+				<div>Tel: <span t-field="guide.phone"/></div>
+				<div>Mail: <span t-field="guide.email"/></div>
                         </t>                                  
                    </t>
                 </t> 
@@ -25,7 +25,7 @@
         <div class="row" tyle="position:relative; margin-top:50px" name="row2">
             <div class="coll-xs-6">
                 <h2>
-			<span style="border-bottom: 4pt solid #00B9E4;">Guide report: <span t-field="o.description"> </span> <span t-field="o.date_start" t-field-options='{"format": "d MMMM y"}'></span> </span>
+			<span style="border-bottom: 4pt solid #00B9E4;">Activity Summary D-Day: <span t-field="o.description"> </span> <span t-field="o.date_start" t-field-options='{"format": "d MMMM y"}'></span> </span>
                 </h2>                                                            
             </div>
         </div>
@@ -43,10 +43,18 @@
                     <h4>Expected participants:</h4>
                     <span t-field="o.registrations_expected"/>
                 </div>
+                <div class="row" name="clients-participants-actual">
+                    <h4>Actual amount of participants:</h4>
+                    <span/>
+                </div>
             </div>
             <div class="col-xs-6" name="type-activite">
                 <div class="row" name="activite-titre">
                     <h3>Activity:</h3>
+                </div>
+                <div class="row" name="activite-type">
+                    <h4>Activity type:</h4>
+                    <span t-field="o.activity_type.name"/> 
                 </div>
                 <div class="row" name="activite-depart">
                     <h4>Start time and place:</h4>
@@ -82,6 +90,7 @@
                             <th style="border-bottom: 2pt dotted #00B9E4 !important;">Amount of participants</th>
                             <th style="border-bottom: 2pt dotted #00B9E4 !important;">Quantity needed</th>
                             <th style="border-bottom: 2pt dotted #00B9E4 !important;">Resource needed</th>
+                            <th style="border-bottom: 2pt dotted #00B9E4 !important;">Actual amount of bike</th>
                             </tr>
                     </thead>
                     <tbody class="invoice_tbody easymy-coop-normal">
@@ -90,7 +99,8 @@
                             <td><span t-field="l.attendee_id.name"/></td>
                             <td><span t-field="l.quantity"/></td>
                             <td><span t-field="l.quantity_needed"/></td>
-                            <td><span t-field="l.resource_category.name"/></td>
+			    <td><span t-field="l.resource_category.name"/></td>
+			    </td><span/></td>
                         </tr>
                         
                     </tbody>
