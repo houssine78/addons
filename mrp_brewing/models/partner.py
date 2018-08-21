@@ -104,7 +104,7 @@ def compute_crate_per_month(partner_orders):
         nb_months = month_delta(first_order_date, dt.datetime.today())
 
         if nb_months == 0:
-            return nb_crates
+            return nb_crates + 1
         else:
             return nb_crates / float(nb_months)
     else:
