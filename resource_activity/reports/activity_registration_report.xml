@@ -42,7 +42,7 @@
                 <h3>Client:</h3>
               </div>
 	      <div t-if="o.partner_id" class="row" name="clients-nom">
-		  <div t-if="o.partner_id.parent_id" t-field="o.partner_id.parent_id"/>    
+		  <div t-if="o.partner_id.parent_id" t-field="o.partner_id.parent_id.name"/>    
 		  <div t-if="o.partner_id.name" t-field="o.partner_id.name" />
                   <div t-if="o.partner_id.phone">Tel: <span t-field="o.partner_id.phone" /></div>
                   <div t-if="o.partner_id.mobile">Mob: <span t-field="o.partner_id.mobile" /></div>
