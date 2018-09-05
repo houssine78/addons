@@ -35,8 +35,10 @@
               </div>
               <div class="row" name="clients-nom">
                 <h4>Name:</h4>
-		<div t-if="o.partner_id.parent_id" t-field="o.partner_id.parent_id"/>
+		<span t-if="o.partner_id.parent_id.name" t-field="o.partner_id.parent_id.name"/>
 		<span t-if="o.partner_id.name" t-field="o.partner_id.name" />
+		<span t-if="o.partner_id.phone">Tel: <span t-field="o.partner_id.phone" />
+                <span t-if="o.partner_id.mobile">Mob: <span t-field="o.partner_id.mobile" />
               </div>
               <div class="row" name="clients-participants">
                 <h4>Expected participants:</h4>
