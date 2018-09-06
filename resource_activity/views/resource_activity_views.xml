@@ -214,19 +214,14 @@
                         domain="[('date_end', '&gt;=', time.strftime('%Y-%m-%d 00:00:00')),('date_end', '&lt;=', time.strftime('%Y-%m-%d 23:59:59'))]"/>
                     <filter name="ongoing" string="Ongoing"
                     	domain="[('date_start','&lt;=', time.strftime('%Y-%m-%d %H:%M:%S')), ('date_end','&gt;=', time.strftime('%Y-%m-%d %H:%M:%S'))]"/>
-                    	<filter name="scheduled" string="Scheduled"
+                    <filter name="scheduled" string="Scheduled"
                     	domain="[('date_start','&gt;=', time.strftime('%Y-%m-%d 00:00:00')), ('date_end','&gt;=', time.strftime('%Y-%m-%d 00:00:00'))]"/>
-
-                    <filter name="comming_week" string="Today and the 7 next days"
+                    <filter name="coming_week" string="Today and the 7 next days"
                     	domain="[('date_start','&gt;=', ((context_today()).strftime('%Y-%m-%d 00:00:00'))), ('date_start','&lt;=', ((context_today()+datetime.timedelta(days=7)).strftime('%Y-%m-%d 23:59:59')))]"/>
-
                     <filter name="start_today" string="Start today"
                         domain="[('date_start', '&gt;=', time.strftime('%Y-%m-%d 00:00:00')),('date_start', '&lt;=', time.strftime('%Y-%m-%d 23:59:59'))]"/>
-                    
                     <filter name="next" string="What's next"
                         domain="[('date_start', '&gt;=', time.strftime('%Y-%m-%d %H:%M:%S'))]"/>
-
-
 
 		    <field name="partner_id" string="Partner"/>
                     <field name="description" string="Description"/>
