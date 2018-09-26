@@ -57,11 +57,6 @@
                 </div>
                 <div name="resources" t-if="doc.activity_id.booked_resources" class="col-xs-3">
                     <strong>Resources booked:</strong>
-                    <t t-foreach="doc.booked_resources" t-as="booked_resource">
-                        <t t-if="booked_resource">                 
-                            <span style="font-size: 8px" t-field="booked_resource.name"/>
-                        </t>                                  
-                    </t>
                 </div>
             </xpath>
                 </template>
