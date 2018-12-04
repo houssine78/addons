@@ -132,7 +132,7 @@ class ProductTemplate(models.Model):
             elif product.is_in_scale() and not product.will_be_in_scale(vals):
                 # Product is in the scale system and will no longer be
                 # in the scale system after the write: delete it.
-                defered[product.id] = 'unlink'
+                product._send_to_scale_bizerba('unlink')
 
         res = super(ProductTemplate, self).write(vals)
 
