@@ -14,10 +14,13 @@ class Task(models.Model):
         digits=(16, 2))
 
     def _get_qty_invoiced(self):
-        sale_order_lines = self.env['sale.order.line'].search(
+        _qty_invoiced = 0
+        sale_order = self.env['sale.order'].search(
             [('project_id', '=', self.analytic_account_id.id)])
+        for sale_order_lines in sale_order.order_line:
+            _qty_invoiced += sum([line.qty_invoiced for line in sale_order_lines])
 
-        return sum([line.qty_invoiced for line in sale_order_lines])
+        return _qty_invoiced
 
     def _get_qty_effective(self):
         tasks = self.project_id.task_ids
@@ -36,8 +39,9 @@ class Task(models.Model):
     @api.multi
     @api.depends('has_contract_hours')
     def _compute_has_contract_hours(self):
-        sale_order_lines = self.env['sale.order.line'].search(
+        _qty_invoiced = 0
+        sale_order = self.env['sale.order'].search(
             [('project_id', '=', self.analytic_account_id.id)])
-
-        self.has_contract_hours = (sum(
-            [line.qty_invoiced for line in sale_order_lines])) > 0
+        for sale_order_lines in sale_order.order_line:
+            _qty_invoiced += sum([line.qty_invoiced for line in sale_order_lines])
+            self.has_contract_hours = _qty_invoiced > 0
