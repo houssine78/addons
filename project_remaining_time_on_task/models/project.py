@@ -18,7 +18,7 @@ class Task(models.Model):
         sale_order = self.env['sale.order'].search(
             [('project_id', '=', self.analytic_account_id.id)])
         for sale_order_lines in sale_order.order_line:
-            qty_invoiced += sum([line.qty_invoiced for line in sale_order_lines])
+            qty_invoiced = sum([line.qty_invoiced for line in sale_order_lines])
 
         return qty_invoiced
 
@@ -40,9 +40,8 @@ class Task(models.Model):
     @api.multi
     @api.depends('has_contract_hours')
     def _compute_has_contract_hours(self):
-        qty_invoiced = 0
         sale_order = self.env['sale.order'].search(
             [('project_id', '=', self.analytic_account_id.id)])
         for sale_order_lines in sale_order.order_line:
-            qty_invoiced += sum([line.qty_invoiced for line in sale_order_lines])
+            qty_invoiced = sum([line.qty_invoiced for line in sale_order_lines])
             self.has_contract_hours = qty_invoiced > 0
