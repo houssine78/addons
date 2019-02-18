@@ -42,6 +42,7 @@ class Task(models.Model):
     @api.multi
     @api.depends('remaining_hours')
     def _compute_remaining_hours_contract(self):
+        self.ensure_one()
         sale_order = self.env['sale.order'].search(
             [('project_id', '=', self.analytic_account_id.id)])
         qty_invoiced = sum(line.qty_invoiced for line in sale_order.order_line)
