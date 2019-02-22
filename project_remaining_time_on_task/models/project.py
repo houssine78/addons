@@ -14,7 +14,7 @@ class Task(models.Model):
         digits=(16, 2))
 
     @api.multi
-    def _get_qty_effective(self):
+    def _get_project_effective_qty(self):
         self.ensure_one()
         tasks = self.project_id.task_ids
 
@@ -28,7 +28,7 @@ class Task(models.Model):
             [('project_id', '=', self.analytic_account_id.id)])
         qty_invoiced = sum(line.qty_invoiced for line in sale_order.order_line)
         self.remaining_contract_hours = (qty_invoiced
-                                         - self._get_qty_effective())
+                                         - self._get_project_effective_qty())
 
     @api.multi
     @api.depends('has_contract_hours')
