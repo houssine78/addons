@@ -1,0 +1,68 @@
+.openerp .oe_stat_button {
+  font-weight: normal;
+  width: 25px !important;
+  height: 40px;
+}
+
+.cal_lable {
+    width: 50px;
+}
+
+.invitation_block {
+    padding : 50px 0 0 30px;
+    font-size : 14px;
+    background : #f9f9f9;
+}
+.attendee_accepted {
+    background : url(/web/static/src/img/icons/gtk-apply.png) no-repeat;
+    background-size : 15px 15px;
+    padding-left: 20px;
+}
+.attendee_declined {
+    background : url(/web/static/src/img/icons/gtk-cancel.png) no-repeat;
+    background-size : 15px 15px;
+    padding-left: 20px;
+}
+.event_status {
+    border : 1px solid;
+    height : 20px;
+    width : auto;
+    background: #808080;
+    color : #FFFFFF;
+    padding: 5px 10px;
+    width: 400px;
+}
+.cal_inline {
+    display: inline;
+}
+.cal_tag {
+    padding-right : 10px;
+    font-style : italic;
+    font-size : 17px;
+    vertical-align:bottom;
+}
+.cal_image {
+    height: 30px;
+    width : 100px;
+}
+span.no-wrap {
+	white-space:nowrap
+}
+.cal_tab {
+    margin: 20 0 20 0;
+}
+.openerp .oe_remove_follower {
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    line-height: 20px;
+    color: #D3D3D3;
+}
+.openerp .oe_add_input_box > div > input{
+    width: 200px;
+}
+.openerp .oe_add_input_box > div > .oe_m2o_drop_down_button {
+    position: relative;
+    top: 0px;
+    right: 20px;
+}

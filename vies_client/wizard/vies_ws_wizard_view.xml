@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	<record id="vies_partner_view_wizard" model="ir.ui.view">
+            <field name="name">partner_view_wizard.form</field>
+            <field name="model">vies.ws.wizard</field>
+            <field name="arch" type="xml">
+                <form string="VIES Partner">
+                    <group>
+                        <field name="vat_number"/>
+                        <field name="name"/>
+                        <field name="street"/>
+                        <field name="street2"/>
+                        <field name="city"/>
+                        <field name="zip"/>
+                        <field name="country_id"/>
+                        <field name="brut_address"/>
+                        <field name="mode" invisible="1"/>                        
+                    </group>
+                    <group>
+                    	<field name="customer" attrs="{'readonly': [('mode', '=', 'update_partner')]}"/>
+                    	<field name="supplier" attrs="{'readonly': [('mode', '=', 'update_partner')]}"/>
+                   	</group>
+                    <footer>
+                        <button string="Create partner" name="create_partner" type="object" attrs="{'invisible': [('mode', '=', 'update_partner')],'invisible': [('mode', '=', 'update_partner')]}" class="oe_highlight"/>
+                        <button string="Update partner" name="update_partner" type="object" attrs="{'invisible': [('mode', '!=', 'update_partner')],'invisible': [('mode', '=', 'update_partner')]}" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="vies_ws_wizard" model="ir.ui.view">
+            <field name="name">vies_ws_wizard.form</field>
+            <field name="model">vies.ws.wizard</field>
+            <field name="arch" type="xml">
+                <form string="VIES Web Services Wizard">
+                   	<group col="4">
+	                   	<group>
+	                        <field name="vat_number"/>
+	                        <field name="mode" invisible="1"/> 
+	                    </group>
+	                    <group>
+	                    	<field name="customer" attrs="{'readonly': [('mode', '=', 'update_partner')],'invisible': [('mode', '=', 'update_partner')]}"/>
+	                    	<field name="supplier" attrs="{'readonly': [('mode', '=', 'update_partner')],'invisible': [('mode', '=', 'update_partner')]}"/>
+	                   	</group>
+                   	</group>
+                    <footer>
+                        <button string="Call Vies WS" name="call_vies_webservice" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+		
+        <record id="action_ws_search_vat" model="ir.actions.act_window">
+            <field name="name">Search For VAT</field>
+            <field name="res_model">vies.ws.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vies_ws_wizard"/>
+            <field name="target">new</field>
+        </record>
+		
+		<menuitem name="VIES WS Client"
+            id="menu_vies_ws_client"
+            parent="base.menu_base_partner" />
+            
+        <menuitem name="Search For VAT" action="action_ws_search_vat"
+            id="menu_action_ws_search_vat"
+            parent="menu_vies_ws_client" />
+    </data>
+</openerp>
