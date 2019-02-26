@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_vies_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.vies.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">	 
+					<field name="vat_check_vies" invisible="1"/>
+				</xpath>
+            	
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button name="open_wizard_vies" type="object" class="oe_inline oe_stat_button">
+               			<table>
+               				<tr>
+               					<td style="padding-left:5px">
+               						<img src= "/vies_client/static/img/flag_vies.png" width="30px"/>				
+               					</td>
+               					<td style="padding-left:5px;vertical-align:middle">
+               						<label string="vat VIES"/>
+               						<img style="margin-left:5px" src= "/vies_client/static/img/check_ok.png" width="15px" attrs="{'invisible': [('vat_check_vies','!=',True)]}"/>
+               						<img style="margin-left:5px" src= "/vies_client/static/img/check_no.png" width="15px" attrs="{'invisible': [('vat_check_vies','=',True)]}"/>
+               					</td> 
+               				</tr>
+               			</table>
+	                </button>
+                </xpath>
+            </field>
+       </record>
+        
+   </data>
+</openerp>
