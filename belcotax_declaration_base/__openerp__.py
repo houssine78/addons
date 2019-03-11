@@ -21,7 +21,7 @@
     in the referred document above.
     """,
     'data': [
-        # 'security/belcotax_security.xml',
+        'security/belcotax_security.xml',
         # 'security/ir.model.access.csv',
         'data/belcotax_declaration_data.xml',
         'views/belcotax_template_views.xml',

@@ -1,7 +1,7 @@
 <odoo>
     <data>
-    	<menuitem name="Belcotax" id="menu_main_belcotax" sequence="80" groups="base.system_user"/>
-    	<menuitem name="Configuration" id="menu_belcotax_configuration" sequence="50" groups="base.system_user"/>
+    	<menuitem name="Belcotax" id="menu_main_belcotax" sequence="80" groups="belcotax_declaration_base.group_belcotax_user"/>
+    	<menuitem name="Configuration" id="menu_belcotax_configuration" parent="menu_main_belcotax" sequence="50" groups="belcotax_declaration_base.group_belcotax_user"/>
 
     	<record model="ir.ui.view" id="belcotax_template_tree">
             <field name="name">belcotax.template.tree</field>
@@ -37,9 +37,9 @@
             <field name="res_model">belcotax.template</field>
             <field name="view_type">form</field>
             <!-- <field name="domain">[('is_company','=',False),('is_operation','=',False)]</field> -->
-            <!-- <field name="view_id" ref="subscription_request_tree"/> -->
+            <!-- <field name="view_id" ref="belcotax_template_tree"/> --> 
         </record>
 
-		<menuitem action="belcotax_template_action" name="Belcotax templates" id="menu_belcotax_template"  parent="menu_belcotax_configuration" sequence="10"/>
+		<menuitem action="belcotax_template_action" name="Belcotax templates" id="menu_belcotax_template"  parent="menu_belcotax_configuration" sequence="10" groups="belcotax_declaration_base.group_belcotax_user"/>
     </data>
 </odoo>
