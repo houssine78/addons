@@ -1,0 +1,14 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="action_move_line_form_inherited">
+            <field name="name">account.journal.move.inherited</field>
+            <field name="res_model">account.move</field>
+            <field name="inherit_id" ref="account.action_move_journal_line"/>
+            <field name="arch" type="xml">
+                <field name="help" position="after">
+                    <field name="limit">321</field>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
