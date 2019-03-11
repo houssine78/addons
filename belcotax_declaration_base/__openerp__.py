@@ -24,7 +24,8 @@
         # 'security/belcotax_security.xml',
         # 'security/ir.model.access.csv',
         'data/belcotax_declaration_data.xml',
-        'view/belcotax_template_views.xml',
+        'views/belcotax_template_views.xml',
     ],
+    'application': True,
     'installable': True,
 }
