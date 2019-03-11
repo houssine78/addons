@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2019 Coop IT Easy SCRLfs
-#     Rémy Taymans <remy@coopiteasy.be>
+#     Houssine BAKKALI <houssine@coopiteasy.be>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
@@ -23,6 +23,8 @@
     'data': [
         # 'security/belcotax_security.xml',
         # 'security/ir.model.access.csv',
+        'data/belcotax_declaration_data.xml',
+        'view/belcotax_template_views.xml',
     ],
     'installable': True,
 }

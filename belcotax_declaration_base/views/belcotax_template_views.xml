@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+    	<menuitem name="Belcotax" id="menu_main_belcotax" sequence="80" groups="base.system_user"/>
+    	<menuitem name="Configuration" id="menu_belcotax_configuration" sequence="50" groups="base.system_user"/>
+
+    	<record model="ir.ui.view" id="belcotax_template_tree">
+            <field name="name">belcotax.template.tree</field>
+            <field name="model">belcotax.template</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Belcotax templates">
+                    <field name="name"/>
+                    <field name="fiscal_year"/>
+                </tree>
+            </field>
+        </record>
+    	
+    	<record model="ir.ui.view" id="belcotax_template_name_form">
+             <field name="name">belcotax.template.form</field>
+             <field name="model">belcotax.template</field>
+             <field name="type">form</field>
+             <field name="arch" type="xml">
+                 <form string="Belcotax template">
+                     <field name="name"/>
+                     <field name="fiscal_year"/>
+                     <notebook>
+                     	<page>
+                     		<field name="record_templates"/>
+                     	</page>
+                     </notebook>
+                 </form>
+             </field>
+        </record>
+
+    	<record id="belcotax_template_action" model="ir.actions.act_window">
+            <field name="name">Belcotax template</field>
+            <field name="res_model">belcotax.template</field>
+            <field name="view_type">form</field>
+            <!-- <field name="domain">[('is_company','=',False),('is_operation','=',False)]</field> -->
+            <!-- <field name="view_id" ref="subscription_request_tree"/> -->
+        </record>
+
+		<menuitem action="belcotax_template_action" name="Belcotax templates" id="menu_belcotax_template"  parent="menu_belcotax_configuration" sequence="10"/>
+    </data>
+</odoo>
