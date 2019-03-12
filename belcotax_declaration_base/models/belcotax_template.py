@@ -24,7 +24,7 @@ class BelcotaxRecordTemplate(models.Model):
                                     string="Record fields")
     parent_record = fields.Many2one('belcotax.record.template',
                                     string="Parent record")
-    has_fields = fields.Boolean(string="Has fields?") 
+    has_fields = fields.Boolean(string="Has fields?")
 
 
 class BelcotaxFieldsTemplate(models.Model):

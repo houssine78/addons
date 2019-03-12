@@ -21,10 +21,16 @@
              <field name="type">form</field>
              <field name="arch" type="xml">
                  <form string="Belcotax template">
-                     <field name="name"/>
-                     <field name="fiscal_year"/>
+                     <group>
+	                     <group>
+		                     <field name="name"/>
+		                     <field name="fiscal_year"/>
+	                     </group>
+	                     <group>
+	                     </group>
+                     </group>
                      <notebook>
-                     	<page>
+                     	<page string="Record templates">
                      		<field name="record_templates"/>
                      	</page>
                      </notebook>
