@@ -9,7 +9,7 @@
 			<field name="name">Winter 2018</field>
 			<field name="start">2018-10-01</field>
 			<field name="end">2019-05-01</field>
-			<field name="is_holiday">0</field>
+			<field name="is_holiday" eval="False"/>
         </record>
 
 		<record id="activity_opening_hours_day_w2018_monday_1" model="activity.opening.hours.day">
@@ -74,7 +74,7 @@
 			<field name="name">Summer 2019</field>
 			<field name="start">2019-05-01</field>
 			<field name="end">2019-10-01</field>
-			<field name="is_holiday">0</field>
+			<field name="is_holiday" eval="False"/>
         </record>
 
 		<record id="activity_opening_hours_day_s2019_monday_1" model="activity.opening.hours.day">
@@ -164,7 +164,7 @@
 			<field name="name">Winter 2019</field>
 			<field name="start">2019-10-01</field>
 			<field name="end">2020-05-01</field>
-			<field name="is_holiday">0</field>
+			<field name="is_holiday" eval="False"/>
         </record>
 
 		<record id="activity_opening_hours_day_w2019_monday_1" model="activity.opening.hours.day">
@@ -229,7 +229,7 @@
 			<field name="name">Summer 2020</field>
 			<field name="start">2020-05-01</field>
 			<field name="end">2021-05-01</field>
-			<field name="is_holiday">0</field>
+			<field name="is_holiday" eval="False"/>
         </record>		
 
 		<record id="activity_opening_hours_day_s2020_monday_1" model="activity.opening.hours.day">
@@ -318,7 +318,7 @@
 			<field name="name">Christmas 2018</field>
 			<field name="start">2018-12-25</field>
 			<field name="end">2018-12-26</field>
-			<field name="is_holiday">1</field>
+			<field name="is_holiday" eval="True"/>
         </record>
 
 		<record id="activity_opening_hours_day_christmas_2018" model="activity.opening.hours.day">
