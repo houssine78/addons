@@ -9,6 +9,7 @@
 			<field name="name">Winter 2018</field>
 			<field name="start">2018-10-01</field>
 			<field name="end">2019-05-01</field>
+			<field name="is_holiday">0</field>
         </record>
 
 		<record id="activity_opening_hours_day_w2018_monday_1" model="activity.opening.hours.day">
@@ -73,7 +74,7 @@
 			<field name="name">Summer 2019</field>
 			<field name="start">2019-05-01</field>
 			<field name="end">2019-10-01</field>
-			<field name="is_holiday">1</field>
+			<field name="is_holiday">0</field>
         </record>
 
 		<record id="activity_opening_hours_day_s2019_monday_1" model="activity.opening.hours.day">
