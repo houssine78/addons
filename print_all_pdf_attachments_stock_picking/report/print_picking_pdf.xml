@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_print_picking_pdfsr" model="ir.actions.report">
+        <field name="name">All Picking PDFs</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="attachment_use">True</field>
+        <field name="print_all_pdf_attachments">True</field>
+        <field name="report_name">jnjoy_stock.all_picking_pdf</field>
+        <field name="report_file">jnjoy_stock.all_picking_pdf</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <record id="act_report_all_attachment_view" model="ir.ui.view">
+        <field name="name">ir.actions.report</field>
+        <field name="model">ir.actions.report</field>
+        <field name="inherit_id" ref="base.act_report_xml_view"/>
+        <field name="arch" type="xml">
+            <field name="attachment_use" position="after">
+                <field name="print_all_pdf_attachments"/>
+            </field>
+        </field>
+    </record>
+</odoo>
