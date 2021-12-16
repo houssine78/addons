@@ -1,8 +1,7 @@
 # Copyright 2021 Eezee-IT (<http://www.eezee-it.com>)
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
-from odoo import fields, models, _
-from odoo.exceptions import UserError
+from odoo import fields, models
 
 from collections import OrderedDict
 
@@ -52,4 +51,4 @@ class IrActionsReport(models.Model):
         if save_in_attachment and res_ids and len(save_in_attachment) == 1:
             _logger.info('The PDF report has been generated from all the pdf attachments.')
             return list(save_in_attachment.values())[0], 'pdf'
-        raise UserError(_('No pdf attachments to print'))
+        return save_in_attachment.values(), 'pdf'

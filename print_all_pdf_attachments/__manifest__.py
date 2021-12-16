@@ -3,7 +3,7 @@
 
 {
     'name': 'Print all pdf attachments',
-    'version': '14.0.1.0.1',
+    'version': '14.0.1.0.0',
     'author': 'Eezee-It',
     'website': 'http://www.eezee-it.com',
     'category': 'Base',
