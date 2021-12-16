@@ -6,8 +6,8 @@
         <field name="report_type">qweb-pdf</field>
         <field name="attachment_use">True</field>
         <field name="print_all_pdf_attachments">True</field>
-        <field name="report_name">jnjoy_stock.all_picking_pdf</field>
-        <field name="report_file">jnjoy_stock.all_picking_pdf</field>
+        <field name="report_name">print_all_pdf_attachments_stock_picking.all_picking_pdf</field>
+        <field name="report_file">print_all_pdf_attachments_stock_picking.all_picking_pdf</field>
     </record>
 
 </odoo>
